@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITMD 4/541 - Lab3 - Tip Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div id="form-wrapper">
+    <span>ITMD 4/541 - Lab3 - Raj Dedhia</span>
+    <h1>Tip Calculator</h1>
+    <form id="tip-form">
+      <div class="form-row">
+        <label for="bill-total-in">Bill Total:</label>
+        <input type="text" id="bill-total-in">
+        <p id="error-message" style="color: red;"></p>
+        <div>
+          <div class="form-row">
+            <label for="tip-in">Tip:</label>
+            <input type="range" min="0" max="100" id="tip-in" value="0">
+            <span id="tip-in-value">0</span>
+          </div>
+          <div class="form-row">
+            <label for="tip-amount-out">Tip Amount:</label>
+            <input type="text" id="tip-amount-out" disabled>
+          </div>
+          <div class="form-row">
+            <label for="total-out">Total Bill with Tip:</label>
+            <input type="text" id="total-out" disabled>
+          </div>
+    </form>
+  </div>
+</body>
+
+</html>

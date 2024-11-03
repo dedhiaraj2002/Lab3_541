@@ -1,0 +1,115 @@
+/* Reset and global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --tip-val-color: #ff6b6b;
+  --background-color: #f0f4f8;
+  --form-background-color: #ffffff;
+  --accent-color: #0077ff;
+  --text-color: #333;
+  --border-radius: 8px;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Form container */
+#form-wrapper {
+  max-width: 600px;
+  background: var(--form-background-color);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 20px var(--shadow-color);
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add a subtle hover effect */
+#form-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip display */
+#tip-in-value {
+  background: linear-gradient(135deg, var(--tip-val-color), #ff9472);
+  color: #fff;
+  display: inline-block;
+  width: 6ch;
+  text-align: center;
+  position: relative;
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  margin-left: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Tooltip arrow */
+#tip-in-value::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 8px solid transparent;
+  border-right: 8px solid var(--tip-val-color);
+  border-bottom: 8px solid transparent;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Tooltip hover effect */
+#tip-in-value:hover {
+  background: linear-gradient(135deg, #ff9472, var(--tip-val-color));
+  transform: scale(1.1);
+}
+
+/* Form fields styling */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  background: #fafafa;
+  font-size: 1em;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect for form fields */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(0, 119, 255, 0.3);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #form-wrapper {
+      padding: 20px;
+      max-width: 100%;
+  }
+
+  #tip-in-value {
+      margin-left: 8px;
+      padding: 6px 10px;
+      font-size: 0.9em;
+  }
+}
